@@ -58,18 +58,6 @@ function processData(weatherData) {
     location: weatherData.location.name.toUpperCase(),
   };
 
-  // if in the US, add state
-  // if not, add country
-  if (weatherData.location.country === 'United States of America') {
-    myData['region'] = weatherData.location.region.toUpperCase();
-  }
-  else {
-    myData['region'] = weatherData.location.country.toUpperCase();
-  }
-
-  return myData;
-}
-
 function displayData(newData) {
   const weatherInfo = document.getElementsByClassName('info');
   Array.from(weatherInfo).forEach((div) => {
